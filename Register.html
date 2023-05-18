@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Registration Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            padding: 20px;
+            background-color: rgb(239, 234, 172);
+            width: 25%;
+            margin: auto;
+            border: 1px #f1f1f1;
+            margin-top: 25px;
+
+        }
+        
+        h2 {
+            text-align: center;
+            color: #333333;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 2px;
+            color: #0e0d0d;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            margin: 8px 0;
+            padding: 12px 20px;
+            display: inline-block;
+            border: 2px solid rgb(199, 203, 199);
+            box-sizing: border-box;
+            border-radius: 5px;
+            border: 1px #f1f1f1;
+        }
+        
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #4caf50;
+            color: #ffffff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        .text-secondary {
+            color: #888888;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Registration</h1>
+        <form>
+            <label for="username">Username:</label>
+            <input type="text" placeholder="Enter Username" id="username" required>
+            
+            <label for="email" >Email:</label>
+            <input type="email" placeholder="Enter Email" id="email" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" placeholder="Enter Password" id="password" required>
+
+            <label for="password">Re-enter Password:</label>
+            <input type="password" placeholder="Enter Password again" id="password" required>
+            
+            <button type="submit">Register</button>
+        </form>
+        <p class="text-center text-secondary">Already have an account? <a href="OpenPage.html">Log in</a></p>
+    </div>
+</body>
+</html>
