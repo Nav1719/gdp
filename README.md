@@ -1,1 +1,1 @@
-# gdp Team 6
+# GDP Team 6
