@@ -11,15 +11,15 @@
             text-align: center;
             color: #070707;
         }
-  
-        Body {
+
+        body {
             font-family: Calibri, Helvetica, sans-serif;
-            background-image: url('image.jpg'); 
+            background-image: url('image.jpg');
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
-            background-color: rgba(0, 0, 0, 0.3);
-            
+            background-color: rgba(239, 235, 235, 0.3);
+
         }
 
         button {
@@ -34,7 +34,7 @@
         }
 
         form {
-            border: 1px  #f1f1f1;
+            border: 1px #f1f1f1;
         }
 
         input[type=text],
@@ -65,14 +65,21 @@
             box-align: center; */
             padding: 25px;
             background-color: rgb(239, 234, 172);
-            width: 25%; 
+            width: 25%;
             margin: auto;
         }
-        h2{
+
+        h2 {
             color: #0c0101;
             text-align: center;
         }
-        
+
+        .login-signup-now {
+            color: #2c2b2b;
+            font-size: 16px;
+            font-weight: 400;
+            margin-top: 16px;
+        }
     </style>
 </head>
 
@@ -81,19 +88,23 @@
     <h1>Historical Data Retrival </h1>
     <h2>Guest Log-in</h2>
     <div class="form">
-        <form>  
-            <div class="container">   
-                <label>Username:</label>   
-                <input type="text" placeholder="Enter Username" name="username" required>  
-                <label>Password:</label>   
-                <input type="password" placeholder="Enter Password" name="password" required>  
-                <button type="button" onclick="redirectToDashboard()">Login</button>   
-                <input type="checkbox" checked="checked"> Remember me&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <form>
+            <div class="container">
+                <label>Username:</label>
+                <input type="text" placeholder="Enter Username" name="username" required>
+                <label>Password:</label>
+                <input type="password" placeholder="Enter Password" name="password" required>
+                <button type="button" onclick="redirectToDashboard()">Login</button>
+                <input type="checkbox" checked="checked"> Remember
+                me&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <!-- <button type="button" class="cancelbtn">Cancel</button> -->
                 <!-- <br>    -->
-                Forgot <a href="#">password?</a>   
-            </div>   
-        </form> 
+                Forgot <a href="#">password?</a>
+                <div class="login-signup-now" data-uia="login-signup-now">New to HDR?
+                    <a class="" target="_self" href="Register.html">Sign up now</a>
+                </div>
+            </div>
+        </form>
     </div>
 
     <script>
