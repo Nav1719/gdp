@@ -1,68 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="DashboardStyle.css">
     <title>Keyword Search</title>
     <meta charset="UTF-8">
     <script>
         function searchAndDisplay() {
             var keyword = document.getElementById("keyword").value.toLowerCase();
-            var paragraph = document.getElementById("paragraph").innerText.toLowerCase();
-
-            if (paragraph.includes(keyword)) {
-                document.getElementById("result").innerText = paragraph;
+            var paragraph = "The American Revolution, which took place from 1775 to 1783, was a defining moment in US history. It was a struggle for independence from British rule and ultimately led to the birth of a new nation—the United States of America.The seeds of discontent were sown in the American colonies as tensions grew between the British government and the colonists. Issues such as taxation without representation and the infringement of colonial rights sparked protests and resistance. The famous rallying cry of 'No taxation without representation' echoed throughout the colonies.In 1774, representatives from the colonies gathered in Philadelphia for the First Continental Congress to address their grievances. They called for a united response against British policies and began organizing boycotts and other acts of defiance.Tensions escalated further in 1775 when shots were fired at Lexington and Concord, marking the beginning of armed conflict between colonial militias and British troops. The colonists, known as Patriots, fought for their freedom and rallied around the cause of independence.In 1776, the Second Continental Congress convened in Philadelphia, where a group of delegates drafted and adopted the Declaration of Independence. This historic document, written primarily by Thomas Jefferson, proclaimed the colonies' separation from British rule and asserted the rights of all people to life, liberty, and the pursuit of happiness. The Revolutionary War continued with battles such as the Battle of Saratoga and the Battle of Yorktown. The Patriots received crucial support from foreign allies, most notably France, which proved instrumental in their ultimate victory. In 1783, the Treaty of Paris was signed, officially recognizing the independence of the United States and establishing its borders. The American Revolution laid the foundation for the principles that would shape the new nation. It inspired the drafting of the United States Constitution and the Bill of Rights, which guaranteed individual liberties and established a system of government that balanced power among different branches. The Revolutionary War and the subsequent creation of the United States marked a significant turning point in world history. It demonstrated that a people could successfully rise against colonial rule and establish a democratic nation, inspiring future movements for independence and self-determination around the world.";
+           var para=paragraph.toLowerCase();
+            // document.getElementById("paragraph").innerText.toLowerCase();
+            console.log(paragraph)
+            console.log(keyword)
+            
+            
+            if (para.includes(keyword)) {
+                
+                console.log("into the if block")
+                document.getElementById("result").innerText = "The American Revolution, which took place from 1775 to 1783, was a defining moment in US history. It was a struggle for independence from British rule and ultimately led to the birth of a new nation—the United States of America.The seeds of discontent were sown in the American colonies as tensions grew between the British government and the colonists. Issues such as taxation without representation and the infringement of colonial rights sparked protests and resistance. The famous rallying cry of 'No taxation without representation' echoed throughout the colonies.In 1774, representatives from the colonies gathered in Philadelphia for the First Continental Congress to address their grievances. They called for a united response against British policies and began organizing boycotts and other acts of defiance.Tensions escalated further in 1775 when shots were fired at Lexington and Concord, marking the beginning of armed conflict between colonial militias and British troops. The colonists, known as Patriots, fought for their freedom and rallied around the cause of independence.In 1776, the Second Continental Congress convened in Philadelphia, where a group of delegates drafted and adopted the Declaration of Independence. This historic document, written primarily by Thomas Jefferson, proclaimed the colonies' separation from British rule and asserted the rights of all people to life, liberty, and the pursuit of happiness. The Revolutionary War continued with battles such as the Battle of Saratoga and the Battle of Yorktown. The Patriots received crucial support from foreign allies, most notably France, which proved instrumental in their ultimate victory. In 1783, the Treaty of Paris was signed, officially recognizing the independence of the United States and establishing its borders. The American Revolution laid the foundation for the principles that would shape the new nation. It inspired the drafting of the United States Constitution and the Bill of Rights, which guaranteed individual liberties and established a system of government that balanced power among different branches. The Revolutionary War and the subsequent creation of the United States marked a significant turning point in world history. It demonstrated that a people could successfully rise against colonial rule and establish a democratic nation, inspiring future movements for independence and self-determination around the world.";
             } else {
+                console.log("into the else block")
                 document.getElementById("result").innerText = "Keyword not found.";
             }
         }
     </script>
-    <style>
-        .container {
-            
-            padding: 25px;
-            background-color: rgb(247, 246, 241);
-            width: 100%; 
-            margin: auto;
-        }
-        button {
-            background-color: #f44e16;
-            margin-left: 20px;
-            margin-right: 20px;
-            color: rgb(243, 241, 238);
-            padding: 10px;
-            border: none;
-            cursor: pointer;
-            border-radius: 2px; 
-        }
-        button:hover {
-            opacity: 0.7;
-        }
-        .pdf{
-            position: absolute;            
-            right: 25px;
-            
-        }
-        #pdf-container {
-            width: 100%;
-            height: 10vh;
-        }
-        input[type=text]{
-            margin: 8px 0x ;
-            margin-left: 50px;
-            padding: 12px 20px;
-            display: inline-block;
-            border: 2px solid rgb(199, 203, 199);
-            box-sizing: border-box;
-            border-radius: 5px;
-        }
-        h1{
-            margin-left: 25px;
-        }
-        #result{
-            margin-left: 25px;
-        }
-        
-    </style>
 </head>
+
 <body>
     <div class = "container">
     <input type="text" id="keyword" placeholder="Enter keyword">
@@ -137,11 +100,17 @@
             container.innerHTML = highlightedText;
         }
     </script>
-    <p id="paragraph">
-       <h1> The paragraph will be shown here </h1>
-       </p>
+    <h1> The paragraph will be shown here </h1>
     <br>
     <div id="result"></div>
+    <p id="paragraph">
+        <!-- The American Revolution, which took place from 1775 to 1783, was a defining moment in US history. It was a struggle for independence from British rule and ultimately led to the birth of a new nation—the United States of America.The seeds of discontent were sown in the American colonies as tensions grew between the British government and the colonists. Issues such as taxation without representation and the infringement of colonial rights sparked protests and resistance. The famous rallying cry of 'No taxation without representation' echoed throughout the colonies.In 1774, representatives from the colonies gathered in Philadelphia for the First Continental Congress to address their grievances. They called for a united response against British policies and began organizing boycotts and other acts of defiance.
+        Tensions escalated further in 1775 when shots were fired at Lexington and Concord, marking the beginning of armed conflict between colonial militias and British troops. The colonists, known as Patriots, fought for their freedom and rallied around the cause of independence.In 1776, the Second Continental Congress convened in Philadelphia, where a group of delegates drafted and adopted the Declaration of Independence. This historic document, written primarily by Thomas Jefferson, proclaimed the colonies' separation from British rule and asserted the rights of all people to life, liberty, and the pursuit of happiness. The Revolutionary War continued with battles such as the Battle of Saratoga and the Battle of Yorktown. The Patriots received crucial support from foreign allies, most notably France, which proved instrumental in their ultimate victory.
+        In 1783, the Treaty of Paris was signed, officially recognizing the independence of the United States and establishing its borders. The American Revolution laid the foundation for the principles that would shape the new nation. It inspired the drafting of the United States Constitution and the Bill of Rights, which guaranteed individual liberties and established a system of government that balanced power among different branches. The Revolutionary War and the subsequent creation of the United States marked a significant turning point in world history. It demonstrated that a people could successfully rise against colonial rule and establish a democratic nation, inspiring future movements for independence and self-determination around the world.
+     -->
+    </p>
+    <br>
+    
     </div>
 </body>
 </html>
