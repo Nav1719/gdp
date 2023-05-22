@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="LoginHelp.css">
+  <title>Forgot Password</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Forgot Password</h1>
+
+    <form>
+
+      <label for="email">Email:</label>
+      <input type="email" placeholder="Enter Email" id="email" required>
+      <br>
+      <button type="submit">Reset Password</button>
+    </form>
+
+    <script>
+      document.querySelector('form').addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        // Get the entered email
+        var email = document.getElementById('email').value;
+
+        // Perform password reset logic here
+        // (e.g., send a password reset email to the provided email address)
+
+        // Show a success message or redirect to a confirmation page
+        alert("Password reset email sent to: " + email);
+
+        // Clear the input field
+        document.getElementById('email').value = '';
+      });
+    </script>
+  </div>
+</body>
+
+</html>
