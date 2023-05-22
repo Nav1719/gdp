@@ -53,11 +53,14 @@
             input.onchange = (event) => {
                 const file = event.target.files[0];
                 const fileReader = new FileReader();
+                alert("File uploaded successfully");
                 fileReader.onload = () => {
                     const typedarray = new Uint8Array(fileReader.result);
                     displayPDF(typedarray);
+                    alert("File uploaded successfully");
                 };
-                fileReader.readAsArrayBuffer(file);
+                //fileReader.readAsArrayBuffer(file);
+                //alert("File uploaded successfully");
             };
             input.click();
         }
