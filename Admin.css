@@ -5,6 +5,9 @@
     float: left;
     height: 100vh;
     position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
 }
 
 .sidebar a {
@@ -32,7 +35,7 @@
     padding: 25px;
     width: 100%;
     margin: auto;
-     /* max-width: 400px;
+    /* max-width: 400px;
     text-align: center;  */
 }
 
@@ -57,7 +60,7 @@ button:hover {
 }
 
 .pdf {
-    margin-top: 2px;
+    margin-top: 12px;
     position: absolute;
     right: 25px;
 
@@ -78,7 +81,7 @@ input[type=text] {
     border-radius: 5px;
     text-align: center;
     width: 75%;
-    
+
 }
 
 h1 {
@@ -86,11 +89,11 @@ h1 {
 }
 
 #result {
-    margin-left: 25px; 
+    margin-left: 25px;
     text-align: justify;
 }
 
-.nav{
+.nav {
     /* background-color: #f74104; */
     margin: auto;
     font-size: 16px;
@@ -100,15 +103,18 @@ h1 {
     color: #000;
     font-weight: bold;
 }
+
 nav:hover {
     opacity: 0.7;
 }
+
 .logout {
     margin-top: auto;
 }
-.img{
+
+.img {
     display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }
