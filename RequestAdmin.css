@@ -1,10 +1,13 @@
 .sidebar {
     width: 200px;
     background-color: #c23c3c;
-    padding: 20px;
+    padding: 10px;
     float: left;
     height: 100vh;
-    
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
 }
 
 .sidebar a {
@@ -29,7 +32,7 @@
 
 .container {
 
-    padding: 25px;
+    padding: 15px;
     width: 100%;
     margin: auto;
      /* max-width: 400px;
@@ -65,7 +68,7 @@ button:hover {
 .access {
     margin-top: 2px;
     margin-bottom: 15px;
-    padding: 25px;
+    padding: 15px;
     position: absolute;
     /* right: 25px; */
     /* top: calc(15vh + 25px); */
@@ -78,7 +81,8 @@ button:hover {
 }
 
 input[type=text],
-input[type=password]  {
+input[type=password],
+input[type=email]  {
     margin: 50px 5px;
     margin-left: 15px;
     padding: 12px 20px;

@@ -116,3 +116,6 @@ nav:hover {
   margin-right: auto;
   width: 50%;
 }
+.highlight {
+    background-color: yellow;
+}

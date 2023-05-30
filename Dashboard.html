@@ -10,26 +10,42 @@
             var keyword = document.getElementById("keyword").value.toLowerCase();
             var paragraph = "In view of the common origin of the two civilizations and their close interrelation it is' natural enough to find the doings of the black kings chronicled after the same fashion as their Egyptian cousins.Their writing is like that of the Egyp¬tian, and the gods they worshipped were closely related to the gods of Egypt. We learn from the inscriptions that when Piankhi, the black king, conquered Egypt in 750 B. C., he worshipped without ques¬tion in Egyptian temples, and the carving in the excavated ruins, which show men and women unmistakably Negro, give evi¬dence of the similarity of religion. Only the idea now is that civilization came down the Nile instead of going up. The black empire appears to have been pretty well run. When the Nubians con¬quered Egypt they seem to have abolished the death penalty and set the prisoners to work on public improvements. Indeed, it would appear that among the blacks there was no custom of putting men to death. When it seemed well that a criminal should be removed he was told of the fact, and allowed to commit suicide. Even the king was obliged to commit suicide at the command of his people. When Cambyses, the King of Persia, con-quered Egypt he was anxious to see for himself whether the stories of the great¬ness of the black empire were true. He sent to the king gifts of gold and palm wine and incense, and asked to be informed whether or not it was true that on a cer¬tain spot called the Table of the Sun, the magistrates put every night provisions of cooked meats so that any one who was hungry might come in the morning and help himself. The black king, Nastasenen, received the envoys peacefully, though without enthusi¬asm. Fie showed them the table of the sun, as described to Cambyses, and took them to the prison, where the prisoners wore fetters of gold, that the Persian might be properly impressed. He did admit, however, that the palm wine was good. Cambyses made war on the blacks but did not succeed in gaining much ground, so he gave up the idea of winning for himself the gold that was so common in the Negro empire.";
             
-            // "The American Revolution, which took place from 1775 to 1783, was a defining moment in US history. It was a struggle for independence from British rule and ultimately led to the birth of a new nation—the United States of America.The seeds of discontent were sown in the American colonies as tensions grew between the British government and the colonists. Issues such as taxation without representation and the infringement of colonial rights sparked protests and resistance. The famous rallying cry of 'No taxation without representation' echoed throughout the colonies.In 1774, representatives from the colonies gathered in Philadelphia for the First Continental Congress to address their grievances. They called for a united response against British policies and began organizing boycotts and other acts of defiance.Tensions escalated further in 1775 when shots were fired at Lexington and Concord, marking the beginning of armed conflict between colonial militias and British troops. The colonists, known as Patriots, fought for their freedom and rallied around the cause of independence.In 1776, the Second Continental Congress convened in Philadelphia, where a group of delegates drafted and adopted the Declaration of Independence. This historic document, written primarily by Thomas Jefferson, proclaimed the colonies' separation from British rule and asserted the rights of all people to life, liberty, and the pursuit of happiness. The Revolutionary War continued with battles such as the Battle of Saratoga and the Battle of Yorktown. The Patriots received crucial support from foreign allies, most notably France, which proved instrumental in their ultimate victory. In 1783, the Treaty of Paris was signed, officially recognizing the independence of the United States and establishing its borders. The American Revolution laid the foundation for the principles that would shape the new nation. It inspired the drafting of the United States Constitution and the Bill of Rights, which guaranteed individual liberties and established a system of government that balanced power among different branches. The Revolutionary War and the subsequent creation of the United States marked a significant turning point in world history. It demonstrated that a people could successfully rise against colonial rule and establish a democratic nation, inspiring future movements for independence and self-determination around the world.";
-            
             var para = paragraph.toLowerCase();
-            // document.getElementById("paragraph").innerText.toLowerCase();
-            // console.log(paragraph)
-            // console.log(keyword)
-
+            var resultDiv = document.getElementById("result");
+            var imageContainer = document.getElementById("image-container");
 
             if (para.includes(keyword)) {
+                var results = [];
+                var index = -1;
 
-                // console.log("into the if block")
-                document.getElementById("result").innerText = paragraph;
-                
-                
-                 document.getElementById("image-container").innerHTML = "<img src='images/african.jpg' alt='Related Image' />";
-            
+                while ((index = para.indexOf(keyword, index + 1)) !== -1) {
+                    results.push(index);
+                }
+
+                var highlightedParagraph = "";
+                for (var i = 0; i < results.length; i++) {
+                    var startIndex = results[i];
+                    var endIndex = startIndex + keyword.length;
+                    var highlightedText = paragraph.substring(startIndex, endIndex);
+                    highlightedParagraph += paragraph.substring(
+                        i === 0 ? 0 : results[i - 1] + keyword.length,
+                        startIndex
+                    );
+                    highlightedParagraph += "<span class='highlight'>" + highlightedText + "</span>";
+                }
+                highlightedParagraph += paragraph.substring(results[results.length - 1] + keyword.length);
+
+                resultDiv.innerHTML = highlightedParagraph;
+                imageContainer.innerHTML = "<img src='images/african.jpg' alt='Related Image' />";
             } else {
-                // console.log("into the else block")
-                document.getElementById("result").innerText = "Keyword not found.";
+                resultDiv.innerText = "Keyword not found.";
+                imageContainer.innerHTML = "";
             }
+        }
+
+        function showMoreResults() {
+            var resultDiv = document.getElementById("result");
+            resultDiv.style.display = "block";
         }
     </script>
 </head>
@@ -47,12 +63,6 @@
         <div class="container">
             <input type="text" id="keyword" placeholder="Enter keyword">
             <button type="button" onclick="searchAndDisplay()">Search</button>
-            <!-- <div class="pdf">
-                <label>Upload here:</label>
-                <button onclick="uploadPDF()">Upload PDF</button>
-                <label>Delete here:</label>
-                <button onclick="removePDF()">Remove PDF</button>
-            </div> -->
 
             <div id="pdf-container"></div>
 
@@ -119,19 +129,16 @@
                     const highlightedText = textToHighlight.replaceAll(searchText, `<span class="highlight">${searchText}</span>`);
                     container.innerHTML = highlightedText;
                 }
-            </script>
-            <!-- <h3> The Article will be shown here </h3> -->
-            <br>
-            <div id="result">
                 
-            </div>
-            <p id="paragraph">             
-            </p>
+            </script>
+            <br>
+            <div id="result"></div>
+            <p id="paragraph"></p>
             <div id="image-container"></div>
 
             <br>
-            <h3> Featured Articles</h3>
-            <div class = "viewFile">
+            <h3>Featured Articles</h3>
+            <div class="viewFile">
                 <a href="ViewFile.html">The Crisis, Vol. 1, No. 2. (December, 1910).</a>
                 <br>
                 <br>

@@ -5,30 +5,8 @@
     <link rel="stylesheet" href="RequestAdmin.css">
     <title> Request Admin</title>
     <meta charset="UTF-8">
-    <script>
-        function searchAndDisplay() {
-            var keyword = document.getElementById("keyword").value.toLowerCase();
-            var paragraph = "In view of the common origin of the two civilizations and their close interrelation it is' natural enough to find the doings of the black kings chronicled after the same fashion as their Egyptian cousins.Their writing is like that of the Egyp¬tian, and the gods they worshipped were closely related to the gods of Egypt. We learn from the inscriptions that when Piankhi, the black king, conquered Egypt in 750 B. C., he worshipped without ques¬tion in Egyptian temples, and the carving in the excavated ruins, which show men and women unmistakably Negro, give evi¬dence of the similarity of religion. Only the idea now is that civilization came down the Nile instead of going up. The black empire appears to have been pretty well run. When the Nubians con¬quered Egypt they seem to have abolished the death penalty and set the prisoners to work on public improvements. Indeed, it would appear that among the blacks there was no custom of putting men to death. When it seemed well that a criminal should be removed he was told of the fact, and allowed to commit suicide. Even the king was obliged to commit suicide at the command of his people. When Cambyses, the King of Persia, con-quered Egypt he was anxious to see for himself whether the stories of the great¬ness of the black empire were true. He sent to the king gifts of gold and palm wine and incense, and asked to be informed whether or not it was true that on a cer¬tain spot called the Table of the Sun, the magistrates put every night provisions of cooked meats so that any one who was hungry might come in the morning and help himself. The black king, Nastasenen, received the envoys peacefully, though without enthusi¬asm. Fie showed them the table of the sun, as described to Cambyses, and took them to the prison, where the prisoners wore fetters of gold, that the Persian might be properly impressed. He did admit, however, that the palm wine was good. Cambyses made war on the blacks but did not succeed in gaining much ground, so he gave up the idea of winning for himself the gold that was so common in the Negro empire.";
-            
-            
-            var para = paragraph.toLowerCase();
-            // document.getElementById("paragraph").innerText.toLowerCase();
-            console.log(paragraph)
-            console.log(keyword)
-
-
-            if (para.includes(keyword)) {
-
-                console.log("into the if block")
-                document.getElementById("result").innerText = paragraph;
-                document.getElementById("image-container").innerHTML = "<img src='images/african.jpg' alt='Related Image' />";
-            
-            } else {
-                console.log("into the else block")
-                document.getElementById("result").innerText = "Keyword not found.";
-            }
-        }
-    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
 </head>
 
 <body>
@@ -42,115 +20,44 @@
     </div>
     <div class="content">
         <div class="container">
-            <!-- <input type="text1" id="keyword" placeholder="Enter keyword">
-            <button type="button" onclick="searchAndDisplay()">Search</button> -->
-            <div class="pdf">
-                <label>Upload here:</label>
-                <button onclick="uploadPDF()">Upload PDF</button>
-                <label>Delete here:</label>
-                <button onclick="removePDF()">Remove PDF</button>
-            </div>
             <div class="access">
-                <label for="username">Username:</label>
-                <input type="text" id="username" placeholder="Enter your username">
-                
-                <label for="password">Password:</label>
-                <input type="password" id="password" placeholder="Enter your password">
-                
+                <label for="email">Email:</label>
+                <input type="email" placeholder="Enter Email" id="email" required>
+
                 <button onclick="requestAdminAccess()">Request Admin Access</button>
 
             </div>
 
             <div id="pdf-container"></div>
-            
+
 
             <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
             <script>
-                let pdfDoc = null;
-                const container = document.getElementById("pdf-container");
-                const searchBar = document.getElementById("search-bar");
-                let currentText = "";
-
-                function uploadPDF() {
-                    const input = document.createElement('input');
-                    input.type = 'file';
-                    input.accept = 'application/pdf';
-                    input.onchange = (event) => {
-                        const file = event.target.files[0];
-                        const fileReader = new FileReader();
-                        alert("File uploaded successfully");
-                        fileReader.onload = () => {
-                            const typedarray = new Uint8Array(fileReader.result);
-                            displayPDF(typedarray);
-                            alert("File uploaded successfully");
-                        };
-                        //fileReader.readAsArrayBuffer(file);
-                        //alert("File uploaded successfully");
-                    };
-                    input.click();
-                }
-
-                function removePDF() {
-                    pdfDoc = null;
-                    container.innerText = "";
-                }
-
-                function displayPDF(pdfData) {
-                    pdfjsLib.getDocument({ data: pdfData }).promise.then(pdf => {
-                        pdfDoc = pdf;
-                        let pagePromises = [];
-                        for (let i = 1; i <= pdf.numPages; i++) {
-                            pagePromises.push(pdf.getPage(i));
-                        }
-
-                        Promise.all(pagePromises).then(pages => {
-                            let textContentPromises = pages.map(page => page.getTextContent());
-
-                            Promise.all(textContentPromises).then(textContents => {
-                                let text = "";
-                                textContents.forEach(content => {
-                                    content.items.forEach(item => {
-                                        text += item.str + " ";
-                                    });
-                                });
-
-                                currentText = text;
-                                container.innerText = currentText;
-                            });
-                        });
-                    });
-                }
-
-                function searchText() {
-                    const searchText = searchBar.value.toLowerCase();
-                    const textToHighlight = currentText.toLowerCase();
-                    const highlightedText = textToHighlight.replaceAll(searchText, `<span class="highlight">${searchText}</span>`);
-                    container.innerHTML = highlightedText;
-                }
 
                 function requestAdminAccess() {
-                    var username = document.getElementById("username").value;
-                    var password = document.getElementById("password").value;
+                    var email = document.getElementById("email").value;
 
                     // Code for validating the credentials and making the admin access request
-                    if (username && password) {
+                    if (email) {
                         // Perform the necessary checks and actions
-                        alert("Admin access requested for user: " + username);
+                        alert("Admin access requested for : " + email);
                     } else {
-                        alert("Invalid credentials. Please try again.");
+                        alert("Invalid mail id. Please try again.");
                     }
+
                 }
+
             </script>
-            <!-- <h1> The paragraph will be shown here </h1> -->
+            
             <br>
             <div id="result"></div>
             <p id="paragraph">
-                
+
             </p>
             <div id="image-container"></div>
             <br>
             <h3> Featured Articles</h3>
-            <div class = "viewFile">
+            <div class="viewFile">
                 <a href="ViewFile.html">The Crisis, Vol. 1, No. 2. (December, 1910).</a>
                 <br>
                 <br>
