@@ -92,6 +92,7 @@ h1 {
 #result {
     margin-left: 25px;
     text-align: justify;
+    margin-top: 25px;
 }
 
 .nav{
@@ -119,3 +120,44 @@ nav:hover {
 .highlight {
     background-color: yellow;
 }
+
+
+.dropbtn {
+    background-color: #f44e16;
+    margin-left: 20px;
+    margin-right: 20px;
+    color: rgb(243, 241, 238);
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 2px;
+    
+    border: none;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {background-color: #ddd;}
+  
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  .dropdown:hover .dropbtn {background-color: #c23c3c;}
