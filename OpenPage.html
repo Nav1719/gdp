@@ -13,6 +13,8 @@
 <body>
     <h1>Historical Data Retrival </h1>
     <h2>Sign-in</h2>
+    <button id="userType" onclick ="same()">Admin </button>
+    <button id="userType" onclick ="same()">User</button>
     <div class="form">
         <form>
             <div class="container">
@@ -47,6 +49,9 @@
         
         function redirectToDashboard() {
             window.location.href = "Dashboard.html";
+        }
+        function same() {
+            window.location.href = "OpenPage.html";
         }
     </script>
 </body>
