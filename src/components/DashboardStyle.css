@@ -1,0 +1,121 @@
+.sidebar {
+    width: 200px;
+    background-color: #c23c3c;
+    padding: 20px;
+    float: left;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.sidebar a {
+    display: block;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: #f1ecec;
+    font-size: 16px;
+}
+
+/* CSS styles for the main content */
+.content {
+
+    margin-left: 220px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    
+}
+
+.container {
+
+    padding: 25px;
+    /* background-color: rgb(247, 246, 241); */
+    width: 100%;
+    margin: auto;
+     /* max-width: 400px;
+    text-align: center;  */
+}
+
+.content,
+.container {
+    min-height: 100vh;
+}
+
+button {
+    background-color: #f44e16;
+    margin-left: 20px;
+    margin-right: 20px;
+    color: rgb(243, 241, 238);
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+button:hover {
+    opacity: 0.7;
+}
+
+.pdf {
+    position: absolute;
+    right: 25px;
+
+}
+
+#pdf-container {
+    width: 100%;
+    height: 10vh;
+}
+
+input[type=text] {
+    margin: 8px 0x;
+    margin-left: 50px;
+    padding: 12px 20px;
+    display: inline-block;
+    border: 2px solid rgb(199, 203, 199);
+    box-sizing: border-box;
+    border-radius: 5px;
+    text-align: center;
+    width: 75%;
+    
+}
+
+h1 {
+    margin-left: 25px;
+}
+
+#result {
+    margin-left: 25px;
+    text-align: justify;
+}
+
+.nav{
+    /* background-color: #f74104; */
+    margin: auto;
+    font-size: 16px;
+
+    padding: 10px;
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+nav:hover {
+    opacity: 0.7;
+}
+.logout {
+    margin-top: auto;
+}
+.img{
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.highlight {
+    background-color: yellow;
+}

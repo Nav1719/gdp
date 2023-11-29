@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Chettan+2&family=Calligraffitti&display=swap');
+
+body {
+  background: #6868AC;
+}
+
+.app-title {
+  font-family: 'Calligraffitti', cursive;
+  /* font-weight: 200; */
+  /* font-size: 2rem; */
+  /* position: absolute; */
+  /* text-shadow: -15px 5px 20px #ced0d3; */
+  margin-top: 10px;
+  top: 100%;
+  /* left: 50%; */
+  transform: translate(-50%,-50%);
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: #F9f1cc;
+  text-shadow: 1px 1cap 0px #FFB650, 
+    1px 1px 0px #FFD662, 
+    1px 1px 0px  #FF80BF, 
+    1px 1px 0px #EF5097, 
+    1px 1px 0px #6868AC, 
+    1px 1px 0px #90B1E0;
+}
